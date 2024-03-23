@@ -113,3 +113,31 @@ function calculateWinner(squares) {
   }
   return null;
 }
+
+// 戦況を取得する関数
+function getBattleStatus() {
+  const status = document.querySelector('.status');
+  const statusText = status ? status.textContent : '';
+  const boardRows = document.querySelectorAll('.board-row');
+  const boardState = [];
+  let battle_status = "";
+  boardRows.forEach((row) => {
+    const rowState = [];
+    row.childNodes.forEach((square) => {
+      rowState.push(square.textContent || '-');
+    });
+    boardState.push(rowState.join(','));
+  });
+  battle_status = "status: " + statusText + "\n";
+  battle_status += "boardState: \n";
+  return battle_status + boardState.join('\n');
+}
+
+window.addEventListener("chainlit-call-fn", (e) => {
+  const { name, args, callback } = e.detail;
+  if (name === "getBattleStatus") {
+    // メッセージを受け取れることの確認のためにログを出力
+    console.log(args);
+    callback(getBattleStatus());
+  }
+});
