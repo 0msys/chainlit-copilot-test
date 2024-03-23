@@ -1,6 +1,6 @@
 {
-  "name": "template-container",   // "template"を任意の名前にする
-  "service": "template-dev",      // "template"をcompose-dev.ymlと同じにする
+  "name": "chainlit-container",
+  "service": "chainlit-dev",
   "workspaceFolder": "/workspace",
   "dockerComposeFile": "compose-dev.yml",
   "remoteUser": "pyuser",
