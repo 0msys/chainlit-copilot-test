@@ -40,4 +40,4 @@ COPY . /workspace
 
 RUN pip install --user -r requirements.txt
 
-CMD ["streamlit", "run", "src/Home.py", "--server.port", "8501"]
+CMD ["chainlit", "run", "main.py"]

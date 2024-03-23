@@ -1,11 +1,11 @@
 version: "3.9"
 services:
-  template:   # "template"を任意の名前に変更
-    container_name: template    # "template"を任意の名前に変更
+  chainlit:   # "chainlit"を任意の名前に変更
+    container_name: chainlit    # "chainlit"を任意の名前に変更
     build:
-      context: .
+      context: ./chainlit
       dockerfile: Dockerfile
       target: prd
     tty: true
     ports:
-      - "8501:8501"
+      - "8000:8000"

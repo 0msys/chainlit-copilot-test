@@ -1,9 +1,0 @@
-[browser]
-gatherUsageStats = false
-
-[logger]
-level = "info"
-
-[server]
-runOnSave = true
-maxUploadSize = 200
