@@ -1,5 +1,14 @@
 version: "3.9"
 services:
+  react:
+    container_name: react
+    build:
+      context: ./react
+      dockerfile: Dockerfile
+    tty: true
+    ports:
+      - "3000:3000"
+
   chainlit:   # "chainlit"を任意の名前に変更
     container_name: chainlit    # "chainlit"を任意の名前に変更
     build:
